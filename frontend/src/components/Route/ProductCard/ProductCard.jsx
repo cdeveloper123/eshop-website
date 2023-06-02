@@ -28,6 +28,8 @@ const ProductCard = ({ data,isEvent }) => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
+  console.log("sold",data);
+
   useEffect(() => {
     if (wishlist && wishlist.find((i) => i._id === data._id)) {
       setClick(true);

@@ -8,6 +8,8 @@ const SellerActivationPage = () => {
   const { activation_token } = useParams();
   const [error, setError] = useState(false);
 
+  console.log("activation_token: ", activation_token);
+
   useEffect(() => {
     if (activation_token) {
       const sendRequest = async () => {

@@ -25,7 +25,7 @@ const shopSchema = new mongoose.Schema({
     required: true,
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     required: true,
   },
   role: {
@@ -37,7 +37,7 @@ const shopSchema = new mongoose.Schema({
     required: true,
   },
   zipCode: {
-    type: Number,
+    type: String,
     required: true,
   },
   withdrawMethod: {

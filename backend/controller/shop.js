@@ -44,9 +44,10 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
 
     const activationToken = createActivationToken(seller);
 
-    const activationUrl = `https://eshop-tutorial-cefl.vercel.app/seller/activation/${activationToken}`;
+    // const activationUrl = `https://eshop-tutorial-cefl.vercel.app/seller/activation/${activationToken}`;
+    const activationUrl = `http://localhost:3000/seller/activation/${activationToken}`;
 
-    try {
+    try {                       
       await sendMail({
         email: seller.email,
         subject: "Activate your Shop",
@@ -67,7 +68,7 @@ router.post("/create-shop", upload.single("file"), async (req, res, next) => {
 // create activation token
 const createActivationToken = (seller) => {
   return jwt.sign(seller, process.env.ACTIVATION_SECRET, {
-    expiresIn: "5m",
+    expiresIn: "15m",
   });
 };
 
